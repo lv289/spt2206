@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load app01_filters %}
+<h1>{{ name|addSB }}</h1>
+<h1>{{ li }}</h1>
+<h1>{{ li.2 }}</h1>
+<h1>{{ A.name }}</h1>
+<h1>{{ A.name }}</h1>
+{#<h1>{{ a.name }}</h1>#}
+<h1>{{ li.2.age }}</h1>
+<h1>{{ name|default:"为空值"}}</h1>
+<h1>{{ li|length }}</h1>
+<h1>{{ num|filesizeformat }}</h1>
+<h1>{{ buf|safe }}</h1>
+<h1>{{ buf2|truncatechars:5 }}</h1>
+
+{% for i in li %}
+    <h1>{{ forloop.revcounter }}</h1>
+{% empty %}
+    <h2>我是空的</h2>
+{% endfor %}
+
+
+
+</body>
+</html>

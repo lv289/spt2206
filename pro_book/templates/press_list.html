@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block a1 %}
+    class="active"
+{% endblock %}
+
+{% block info %}
+
+     <table class="table table-striped">
+         <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>id</th>
+                    <th>名称</th>
+                    <th>操作</th>
+                </tr>
+         </thead>
+         <tbody>
+         {% for i in ret %}
+         <tr>
+             <td>{{ forloop.counter }}</td>
+             <td>{{ i.id }}</td>
+             <td>{{ i.name }}</td>
+             <td>
+                 <a href="/press_del/?id={{ i.id }}">删除</a>
+                 <a href="/press_edit/?id={{ i.id }}">修改</a>
+             </td>
+         </tr>
+          {% endfor %}
+         </tbody>
+     </table>
+
+
+{% endblock %}
+

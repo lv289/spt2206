@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/jquery-1.12.4.min.js"></script>
+
+</head>
+<body>
+<input type="text" name="i1"> +
+<input type="text" name="i2">=
+<input type="text" name="i3">
+<input id="b1" type="button" value="计算">
+
+<script>
+    $('#b1').click(function () {
+        $.ajax({
+            url:/cal/,
+            type:'post',
+            contentType:"application/json",
+            data:JSON.stringify({
+                a:1,
+                b:2
+            }),
+            {#回调函数#}
+            success:function (res) {
+                console.log(typeof(res));
+                var dic_obj = JSON.parse(res);
+                console.log(dic_obj);
+                console.log(typeof(dic_obj));
+                $('[name="i3"]').val(res);
+            }
+
+
+        })
+
+
+
+    })
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

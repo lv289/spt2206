@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block a2 %}
+    class="active"
+{% endblock %}
+
+{% block info %}
+     <table class="table table-striped">
+         <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>id</th>
+                    <th>书名</th>
+                    <th>出版社名</th>
+                    <th>操作</th>
+                </tr>
+         </thead>
+         <tbody>
+         {% for book in data %}
+         <tr>
+             <td>{{ forloop.counter }}</td>
+             <td>{{ book.id }}</td>
+             <td>{{ book.title }}</td>
+             <td>{{ book.press.name }}</td>
+             <td>
+                 <a href="/book_del/?id={{ book.id }}">删除</a>
+                 <a href="/book_edit/?id={{ book.id }}">修改</a>
+             </td>
+         </tr>
+          {% endfor %}
+         </tbody>
+
+
+     </table>
+
+{% endblock %}

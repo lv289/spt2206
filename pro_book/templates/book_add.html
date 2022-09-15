@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加图书</title>
+</head>
+<body>
+    <h1>添加书籍</h1>
+    <form action="" method="post">
+        书名：<input type="text" name="title">
+        <select name="press_id">
+            {% for press in press_list %}
+                  <option value="{{ press.id }}">{{ press.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="提交">
+
+
+    </form>
+
+
+
+
+</body>
+</html>
